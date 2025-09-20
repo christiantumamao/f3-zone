@@ -1,0 +1,72 @@
+
+.nav-action {
+  margin-left: 20px;
+}
+
+/* ===== Join Button Base ===== */
+.btn-join {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  background: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 12px;
+  z-index: 1500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-join.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.btn-join.hide {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+.btn-join:hover {
+  background: #ffea00;
+  transform: scale(1.05);
+}
+
+/* ===== Tablet Adjustments ===== */
+@media (max-width: 1024px) {
+  .btn-join {
+    top: 15px;
+    right: 15px;
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+}
+
+/* ===== Mobile (Keep on Top) ===== */
+@media (max-width: 768px) {
+  .btn-join {
+    top: 15px;    
+    right: 15px;
+    left: auto;   
+    bottom: auto; 
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+}
+
+/* ===== Extra Small Phones ===== */
+@media (max-width: 480px) {
+  .btn-join {
+    top: 15px;
+    right: 10px;
+    left: auto;
+    bottom: auto;
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+

@@ -1,0 +1,192 @@
+.service-section {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(-45deg, #000000, #111111, #eeab02, #000000);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.service-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.service-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.service-header h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #d6c90a;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+}
+
+.service-header p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #f7f7f7;
+  text-transform: uppercase;
+}
+
+.service-gallery {
+  background-color: rgba(34,34,34,0.9);
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(236, 5, 5, 0.945);
+  transition: gap 0.3s;
+}
+
+.service-gallery li {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 180px; 
+  max-width: 220px;
+  height: 220px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 4px solid #eeeeee;
+  box-shadow: 5px 10px 15px rgba(218, 12, 12, 0.4),
+              -2px -5px 10px rgba(226, 7, 7, 0.1);
+  transition: transform 0.35s cubic-bezier(.2, .8, .2, 1), box-shadow 0.35s ease;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.service-gallery li img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.1) contrast(1.05);
+  transition: transform 0.45s cubic-bezier(.2, .8, .2, 1), filter 0.3s ease;
+}
+
+.service-gallery li .content {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.5) 20%, transparent 100%);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.32s ease, transform 0.32s ease, visibility 0s linear 0.32s;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+}
+
+.service-gallery li .content span {
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: transform 0.32s ease, opacity 0.32s ease;
+}
+
+.service-gallery li .content h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #ffd000;
+}
+
+.service-gallery li .content p {
+  font-size: 0.85rem;
+  line-height: 1.3;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0;
+}
+
+.service-gallery li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  z-index: 10;
+}
+
+.service-gallery li:hover img {
+  transform: translate(-50%, -50%) scale(1.1);
+  filter: brightness(1.2) contrast(1.15) saturate(1.1);
+}
+
+.service-gallery li:hover .content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.service-gallery li:hover .content span {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+@media (max-width: 992px) {
+  .service-gallery {
+    padding: 1.5rem;
+  }
+  .service-gallery li {
+    flex: 1 1 calc(50% - 12px);
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-header h2 {
+    font-size: 1.8rem;
+  }
+  .service-header p {
+    font-size: 0.9rem;
+  }
+  .service-gallery {
+    gap: 12px;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .service-gallery li {
+    flex: 1 1 100%;
+    height: 180px;
+  }
+}
+
+
+@media (hover: none) and (pointer: coarse) {
+  .service-gallery li {
+    transform: none !important;
+  }
+  .service-gallery li .content {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .service-gallery li .content span {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

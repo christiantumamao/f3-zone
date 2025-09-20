@@ -1,0 +1,131 @@
+
+/* FAQ Section */
+
+.faq-section {
+  background: #1e1e1e;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 1.5rem auto;
+  max-width: 750px;
+  box-shadow: 0 10px 15px rgba(228, 224, 7, 0.945);
+}
+
+.faq-section h3 {
+  color: #facc15;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item h4 {
+  color: #eab308;
+  font-size: 1.1rem;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item p {
+  color: #ddd;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  display: none; 
+}
+
+.faq-item.active p {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Developers Section */
+.dev-section {
+  background: #1e1e1e;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 1.5rem auto;
+  max-width: 1000px;
+  text-align: center;
+  box-shadow: 0 10px 15px rgba(228, 224, 7, 0.945);
+}
+
+.dev-section h3 {
+  color: #facc15;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dev-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dev-card {
+  background: linear-gradient(145deg, #0e0d0d, #dfb707);
+  padding: 1.2rem;
+  border-radius: 1rem;
+  width: 220px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.dev-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.dev-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 10px 15px rgba(204, 23, 10, 0.945);
+}
+
+.dev-card h4 {
+  color: #eab308;
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.3rem;
+}
+
+.dev-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dev-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
